@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     bool gameEnded = false;
 
-    public float restartDelay = 0.1f;
+    public float restartDelay = 0.3f;
 
     public GameObject completeLevelUI;
 

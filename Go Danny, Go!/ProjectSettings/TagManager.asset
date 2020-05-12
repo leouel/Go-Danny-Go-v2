@@ -12,6 +12,10 @@ TagManager:
   - R2
   - U
   - M
+  - Wall
+  - Enemy
+  - Obj
+  - Trigger
   layers:
   - Default
   - TransparentFX

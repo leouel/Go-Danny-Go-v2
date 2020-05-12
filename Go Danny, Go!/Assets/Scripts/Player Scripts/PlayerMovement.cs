@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 10f;
     private Rigidbody2D myBody;
     public Transform groundCheckPosition;
     public LayerMask groundLayer;
@@ -117,9 +118,17 @@ public class PlayerMovement : MonoBehaviour
         }//ends PlayerJump()
 
     void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Trigger"))
         {
-        Debug.Log("HIT DET");
-        health-= 0.2f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+        else
+        {
+            Debug.Log("HIT DETECTED!!!");
+            health -= 0.2f;
+            //Debug.Log("Health = " + health);
+        }
+    }
 
 }//ends PlayerMovement class
